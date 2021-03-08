@@ -6,12 +6,13 @@
     <div class ="card-header">
     <div class="row">
     <div class="col-md-8">
-    <h2 class="card-title">Listado de casas registradas</h2>
+    <div class="card-title">
+        <h2>House: {{ $house->home}}</h2>
+    </div>
     </div>
     <div class="col-md-4">
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a class="btn btn-warning" href ="{{route('houses.create') }}">+ Nuevo</a>
-       
+        <a class="btn btn-warning" href ="{{route('houses.index') }}">< Regresar</a>
         </div>
         </div>
     </div>
@@ -22,31 +23,29 @@
             <tr>
             <th>Casa</th>
             <th>Información</th>
-            <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-        @forelse($houses as $house)
             <tr>
                 <td>
-                    <a class="btn btn-success" href="{{ route ('houses.show' , $house->id)}}">
-                         <h4>{{ $house->home }}</h4></td>
-                    </a>
+                    <p>Imagen</p>
                 <td>
-                    <p><b>Color: </b>{{ $house->color }}</p>
+                <p><b>Color: </b>{{ $house->color }}</p>
                     <p><b>Número de Puertas: </b>{{ $house->numDoors}}</p>
                     <p><b>Número de ventanas: </b>{{ $house->numWindows }}</p>
                     <p><b>Número de Focos: </b>{{ $house->numFocus }}</p>
                     <p><b>Número de Plantas: </b>{{ $house->numFloor }}</p>
                 </td>
-                <td>Ver - Editar - Eliminar</td>
-          
-        @empty
-            <h1>No hay datos en la base de datos</h1>
-            </tr>
-        @endforelse
         </tbody>
         </table>
   </div>
+  <div class="card-footer">
+        <div class="col">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a class="btn btn-info" href ="{{route('houses.edit' , $house->id) }}">Editar</a>
+                <a class="btn btn-danger" href ="{{route('houses.destroy' , $house->id)}}">Eliminar</a>
+            </div>
+        </div>
+    </div>
 </div>
 </div>

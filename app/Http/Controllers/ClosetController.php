@@ -49,7 +49,7 @@ class ClosetController extends Controller
      */
     public function show(Closet $closet)
     {
-        //
+        return view ('closets.show' , compact('closet'));
     }
 
     /**

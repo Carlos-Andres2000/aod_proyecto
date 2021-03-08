@@ -6,12 +6,13 @@
     <div class ="card-header">
     <div class="row">
     <div class="col-md-8">
-    <h2 class="card-title">Listado de motosierras registradas</h2>
+    <div class="card-title">
+        <h2>Motosierra: {{ $chainsaw->brand }} {{ $chainsaw->model }}</h2>
+    </div>
     </div>
     <div class="col-md-4">
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a class="btn btn-warning" href ="{{route('chainsaws.create') }}">+ Nuevo</a>
-       
+        <a class="btn btn-warning" href ="{{route('chainsaws.index') }}">< Regresar</a>
         </div>
         </div>
     </div>
@@ -22,31 +23,29 @@
             <tr>
             <th>Motosierra</th>
             <th>Información</th>
-            <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-        @forelse($chainsaws as $chainsaw)
             <tr>
                 <td>
-                    <a class="btn btn-success" href="{{ route ('chainsaws.show' , $chainsaw->id) }}">
-                         <h4>{{ $chainsaw->brand }} {{ $chainsaw->model }}</h4></td>
-                    </a>
+                    <p>Imagen</p>
                 <td>
-                    <p><b>Tipo de Cadena: </b>{{ $chainsaw->chainType }}</p>
+                <p><b>Tipo de Cadena: </b>{{ $chainsaw->chainType }}</p>
                     <p><b>Potencia: </b>{{ $chainsaw->power}}</p>
                     <p><b>Capacidad del tanque: </b>{{ $chainsaw->tankCapacity }}</p>
                     <p><b>Velocidad: </b>{{ $chainsaw->speed }}</p>
                     <p><b>Tipo de Gasolina: </b>{{ $chainsaw->typeFuel }}</p>
                 </td>
-                <td>Ver - Editar - Eliminar</td>
-          
-        @empty
-            <h1>No hay datos en la base de datos</h1>
-            </tr>
-        @endforelse
         </tbody>
         </table>
   </div>
+  <div class="card-footer">
+        <div class="col">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a class="btn btn-info" href ="{{route('chainsaws.edit' , $chainsaw->id) }}">Editar</a>
+                <a class="btn btn-danger" href ="{{route('chainsaws.destroy' , $chainsaw->id)}}">Eliminar</a>
+            </div>
+        </div>
+    </div>
 </div>
 </div>

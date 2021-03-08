@@ -49,7 +49,7 @@ class ChainsawController extends Controller
      */
     public function show(Chainsaw $Chainsaw)
     {
-        //
+        return view ('chainsaws.show' , compact('chainsaw'));
     }
 
     /**
