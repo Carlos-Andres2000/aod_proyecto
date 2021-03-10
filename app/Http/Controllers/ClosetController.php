@@ -38,7 +38,7 @@ class ClosetController extends Controller
     {
         $closet = request()->except('_token');
         Closet::insert($closet);
-        return view ('closets.index');
+        return redirect ()->to(url('/closets'));
     }
 
     /**
@@ -60,7 +60,7 @@ class ClosetController extends Controller
      */
     public function edit(Closet $closet)
     {
-        //
+        return view ('closets.edit' , compact('closet'));
     }
 
     /**
@@ -72,7 +72,9 @@ class ClosetController extends Controller
      */
     public function update(Request $request, Closet $closet)
     {
-        //
+        $dataCloset = request()->except('_token');
+        $closet->update($dataCloset);
+        return redirect()->to(url('/closets'));
     }
 
     /**

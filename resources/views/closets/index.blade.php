@@ -23,7 +23,6 @@
             <th>Ropero</th>
             <th>Información</th>
             <th>Descripción</th>
-            <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -31,9 +30,10 @@
             <tr>
                 <td>
                     <a class="btn btn-success" href="{{ route ('closets.show' , $closet->id)}}">
-                         <h4>{{ $closet->brand }} {{ $closet->model }}</h4></td>
+                         <h4>{{ $closet->brand }}</h4></td>
                     </a>
                 <td>
+                    <p><b>Modelo: </b>{{ $closet->model }}</p>
                     <p><b>Color: </b>{{ $closet->color }}</p>
                     <p><b>Número de Puertas: </b>{{ $closet->numberDoors}}</p>
                     <p><b>Tipo de Madera: </b>{{ $closet->typeWood }}</p>
@@ -41,7 +41,6 @@
                     <p><b>Número de Vidrios: </b>{{ $closet->numberGlasses }}</p>
                 </td>
                 <td><p>{{ $closet->description }}</p></td>
-                <td>Ver - Editar - Eliminar</td>
           
         @empty
             <h1>No hay datos en la base de datos</h1>

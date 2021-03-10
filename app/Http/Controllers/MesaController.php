@@ -38,7 +38,7 @@ class MesaController extends Controller
     {
         $mesa = request()->except('_token');
         Mesa::insert($mesa);
-        return view ('mesas.index');
+        return redirect()->to(url('/mesas'));
     }
 
     /**
@@ -60,7 +60,7 @@ class MesaController extends Controller
      */
     public function edit(Mesa $mesa)
     {
-        //
+        return view ('mesas.edit' , compact('mesa'));
     }
 
     /**
@@ -72,7 +72,9 @@ class MesaController extends Controller
      */
     public function update(Request $request, Mesa $mesa)
     {
-        //
+        $dataMesa = request()->except('_token');
+        $mesa->update($dataMesa);
+        return redirect()->to(url('/mesas'));
     }
 
     /**

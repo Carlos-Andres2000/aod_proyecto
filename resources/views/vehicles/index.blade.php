@@ -23,7 +23,6 @@
             <th>Vehiculo</th>
             <th>Información</th>
             <th>Descripción</th>
-            <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -36,12 +35,11 @@
                 <td>
                     <p><b>Color: </b>{{ $vehicle->color }}</p>
                     <p><b>Número de Serie: </b>{{ $vehicle->serialNumber }}</p>
-                    <p><b>Puertas: </b>{{ $vehicle->numberOfDoors }}</p>
+                    <p><b>Puertas: </b>{{ $vehicle->numberDoors }}</p>
                     <p><b>Asientos: </b>{{ $vehicle->numberOfSeats }}</p>
                     <p><b>Matrícula: </b>{{ $vehicle->carRegistration }}</p>
                 </td>
                 <td><p>{{ $vehicle->description }}</p></td>
-                <td>Ver - Editar - Eliminar</td>
           
         @empty
             <h1>No hay datos en la base de datos</h1>

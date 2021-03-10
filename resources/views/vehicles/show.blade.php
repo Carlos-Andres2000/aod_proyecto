@@ -34,7 +34,7 @@
                 <td>
                     <p><b>Color: </b>{{ $vehicle->color }}</p>
                     <p><b>Número de Serie: </b>{{ $vehicle->serialNumber }}</p>
-                    <p><b>Puertas: </b>{{ $vehicle->numberOfDoors }}</p>
+                    <p><b>Puertas: </b>{{ $vehicle->numberDoors }}</p>
                     <p><b>Asientos: </b>{{ $vehicle->numberOfSeats }}</p>
                     <p><b>Matrícula: </b>{{ $vehicle->carRegistration }}</p>
                 </td>

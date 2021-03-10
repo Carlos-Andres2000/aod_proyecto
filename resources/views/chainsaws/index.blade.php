@@ -22,7 +22,6 @@
             <tr>
             <th>Motosierra</th>
             <th>Información</th>
-            <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -39,7 +38,6 @@
                     <p><b>Velocidad: </b>{{ $chainsaw->speed }}</p>
                     <p><b>Tipo de Gasolina: </b>{{ $chainsaw->typeFuel }}</p>
                 </td>
-                <td>Ver - Editar - Eliminar</td>
           
         @empty
             <h1>No hay datos en la base de datos</h1>

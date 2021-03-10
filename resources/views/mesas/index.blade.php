@@ -23,7 +23,6 @@
             <th>Mesa</th>
             <th>Información</th>
             <th>Descripción</th>
-            <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -41,7 +40,6 @@
                     <p><b>Número de Patas: </b>{{ $mesas->numberLegs }}</p>
                 </td>
                 <td><p>{{ $mesas->description }}</p></td>
-                <td>Ver - Editar - Eliminar</td>
           
         @empty
             <h1>No hay datos en la base de datos</h1>

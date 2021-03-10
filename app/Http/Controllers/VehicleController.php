@@ -38,7 +38,7 @@ class VehicleController extends Controller
     {
         $vehicle = request()->except('_token');
         Vehicle::insert($vehicle);
-        return view ('vehicles.index');
+        return redirect ()->to(url('/vehicles'));
     }
 
     /**
@@ -60,7 +60,7 @@ class VehicleController extends Controller
      */
     public function edit(Vehicle $vehicle)
     {
-        //
+        return view ('vehicles.edit' , compact('vehicle'));
     }
 
     /**
@@ -72,7 +72,9 @@ class VehicleController extends Controller
      */
     public function update(Request $request, Vehicle $vehicle)
     {
-        //
+        $dataVehicle = request()->except('_token');
+        $vehicle->update($dataVehicle);
+        return redirect()->to(url('/vehicles'));
     }
 
     /**

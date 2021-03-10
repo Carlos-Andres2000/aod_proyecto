@@ -38,7 +38,7 @@ class ChainsawController extends Controller
     {
         $chainsaw = request()->except('_token');
         Chainsaw::insert($chainsaw);
-        return view ('chainsaws.index');
+        return redirect ()->to(url('/chainsaws'));
     }
 
     /**
@@ -49,7 +49,7 @@ class ChainsawController extends Controller
      */
     public function show(Chainsaw $Chainsaw)
     {
-        return view ('chainsaws.show' , compact('chainsaw'));
+        return view ('chainsaws.show' , compact('Chainsaw'));
     }
 
     /**
@@ -60,7 +60,7 @@ class ChainsawController extends Controller
      */
     public function edit(Chainsaw $Chainsaw)
     {
-        //
+        return view ('chainsaws.edit' , compact('Chainsaw'));
     }
 
     /**
@@ -72,7 +72,9 @@ class ChainsawController extends Controller
      */
     public function update(Request $request, Chainsaw $Chainsaw)
     {
-        //
+        $dataChainsaw = request()->except('_token');
+        $Chainsaw->update($dataChainsaw);
+        return redirect()->to(url('/chainsaws'));
     }
 
     /**

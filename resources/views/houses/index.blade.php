@@ -22,7 +22,6 @@
             <tr>
             <th>Casa</th>
             <th>Información</th>
-            <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -39,7 +38,6 @@
                     <p><b>Número de Focos: </b>{{ $house->numFocus }}</p>
                     <p><b>Número de Plantas: </b>{{ $house->numFloor }}</p>
                 </td>
-                <td>Ver - Editar - Eliminar</td>
           
         @empty
             <h1>No hay datos en la base de datos</h1>

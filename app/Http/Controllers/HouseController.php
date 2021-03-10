@@ -38,7 +38,7 @@ class HouseController extends Controller
     {
         $house = request()->except('_token');
         House::insert($house);
-        return view ('houses.index');
+        return redirect()->to(url('/houses'));
     }
 
     /**
@@ -60,7 +60,7 @@ class HouseController extends Controller
      */
     public function edit(House $house)
     {
-        //
+        return view ('houses.edit' , compact('house'));
     }
 
     /**
@@ -72,7 +72,9 @@ class HouseController extends Controller
      */
     public function update(Request $request, House $house)
     {
-        //
+        $dataHouse = request()->except('_token');
+        $house->update($dataHouse);
+        return redirect()->to(url('/houses'));
     }
 
     /**

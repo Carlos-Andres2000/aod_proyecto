@@ -7,7 +7,7 @@
     <div class="row">
     <div class="col-md-8">
     <div class="card-title">
-        <h2>House: {{ $house->home}}</h2>
+        <h2>Casa: {{ $house->home}}</h2>
     </div>
     </div>
     <div class="col-md-4">
