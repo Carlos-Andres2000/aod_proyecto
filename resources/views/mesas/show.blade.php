@@ -45,7 +45,11 @@
         <div class="col">
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <a class="btn btn-info" href ="{{route('mesas.edit' , $mesa->id) }}">Editar</a>
-                <a class="btn btn-danger" href ="{{route('mesas.destroy' , $mesa->id)}}">Eliminar</a>
+                <form action="{{route('mesas.destroy' , $mesa->id)}}" method="post">
+                @csrf 
+                @method('DELETE')
+                <input class="btn btn-danger" type="submit" value="Eliminar">
+                </form>
             </div>
         </div>
     </div>

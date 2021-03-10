@@ -85,6 +85,7 @@ class ChainsawController extends Controller
      */
     public function destroy(Chainsaw $Chainsaw)
     {
-        //
+        $Chainsaw->delete();
+        return redirect()->to(url('/chainsaws'));
     }
 }

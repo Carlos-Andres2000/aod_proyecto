@@ -85,6 +85,7 @@ class VehicleController extends Controller
      */
     public function destroy(Vehicle $vehicle)
     {
-        //
+        $vehicle->delete();
+        return redirect()->to(url('/vehicles'));
     }
 }

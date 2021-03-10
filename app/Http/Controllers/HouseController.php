@@ -85,6 +85,7 @@ class HouseController extends Controller
      */
     public function destroy(House $house)
     {
-        //
+        $house->delete();
+        return redirect()->to(url('/houses'));
     }
 }

@@ -85,6 +85,7 @@ class ClosetController extends Controller
      */
     public function destroy(Closet $closet)
     {
-        //
+        $closet->delete();
+        return redirect()->to(url('/closets'));
     }
 }

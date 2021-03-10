@@ -85,6 +85,7 @@ class MesaController extends Controller
      */
     public function destroy(Mesa $mesa)
     {
-        //
+        $mesa->delete();
+        return redirect()->to(url('/mesas'));
     }
 }

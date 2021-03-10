@@ -43,7 +43,11 @@
         <div class="col">
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <a class="btn btn-info" href ="{{route('houses.edit' , $house->id) }}">Editar</a>
-                <a class="btn btn-danger" href ="{{route('houses.destroy' , $house->id)}}">Eliminar</a>
+                <form action="{{route('houses.destroy' , $house->id)}}" method="post">
+                @csrf 
+                @method('DELETE')
+                <input class="btn btn-danger" type="submit" value="Eliminar">
+                </form>
             </div>
         </div>
     </div>
